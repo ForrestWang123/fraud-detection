@@ -8,7 +8,12 @@ rocketmq:
   name-server: localhost:9876
   producer:
     group: fraud-detection-test-group
-    
+
+fraudDetection:
+  amountCheckRuleThreshold: 1000
+  suspiciousAccounts: 999,888,777
+  pullMessageThreadsNum: 0
+
 # Logging configuration for tests
 logging:
   level:

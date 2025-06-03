@@ -21,6 +21,7 @@ sls:
 fraudDetection:
   amountCheckRuleThreshold: 100000000
   suspiciousAccounts: 123,456,789
+  pullMessageThreadsNum: 16
   # messageConsumer thread pool configs
   messageConsumerThreadPoolQueueSize: 1000
   messageConsumerCorePoolSize: 16

@@ -14,7 +14,6 @@ import java.util.List;
 @Slf4j
 @Component
 public class DetectProcessor {
-    @Autowired
     private AbstractRule rootRule;
     @Autowired
     private LogFraudNotifier fraudNotifier;

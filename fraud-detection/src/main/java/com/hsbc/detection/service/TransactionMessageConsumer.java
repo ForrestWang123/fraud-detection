@@ -1,10 +1,12 @@
 package com.hsbc.detection.service;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.hsbc.detection.domain.DetectProcessor;
 import com.hsbc.detection.domain.FinishedCallBack;
 import com.hsbc.detection.domain.entity.Transaction;
 import com.hsbc.detection.util.DetectionThreadFactory;
+import com.hsbc.detection.util.TransactionDeserializer;
 import org.apache.rocketmq.client.apis.ClientException;
 import org.apache.rocketmq.client.apis.message.MessageView;
 import org.apache.rocketmq.client.apis.consumer.SimpleConsumer;
@@ -30,12 +32,16 @@ public class TransactionMessageConsumer {
     private SimpleConsumer simpleConsumer;
     @Value("${rocketmq.maxMessageNum:100}")
     private int maxMessageNum;
+    @Value("${fraudDetection.pullMessageThreadsNum}")
+    private int pullMessageThreadsNum;
     @Value("${rocketmq.invisibleDurationSeconds:30}")
     private long invisibleDurationSeconds;
-    private final ThreadPoolExecutor threadPoolExecutor; // CPU-Intensive, so the max thread num is set to availableProcessors * 2
+    private final ThreadPoolExecutor threadPoolExecutor;
     @Autowired
     private DetectProcessor detectProcessor;
-    private static final Gson gson = new Gson();
+    private static final Gson gson = new GsonBuilder()
+            .registerTypeAdapter(Transaction.class, new TransactionDeserializer())
+            .create();
 
     public TransactionMessageConsumer(@Value("${fraudDetection.messageConsumerThreadPoolQueueSize}") int blockingQueueSize,
                                       @Value("${fraudDetection.messageConsumerCorePoolSize}") int corePoolSize,
@@ -53,37 +59,48 @@ public class TransactionMessageConsumer {
     }
 
     public void start() {
-        int processorsNum = Runtime.getRuntime().availableProcessors();
-        for (int i = 0; i < processorsNum; i++) {
+        for (int i = 0; i < pullMessageThreadsNum; i++) {
             threadPoolExecutor.submit(() -> {
                 while (running.get()) {
                     try {
-                        List<MessageView> messages = simpleConsumer.receive(maxMessageNum, Duration.ofSeconds(invisibleDurationSeconds));
-                        if (messages.isEmpty()) {
-                            continue;
-                        }
-                        for (MessageView message : messages) {
-                            String msgBodyString = StandardCharsets.UTF_8.decode(message.getBody()).toString();
-                            try {
-                                Transaction transaction = gson.fromJson(msgBodyString, Transaction.class);
-                                detectProcessor.detect(transaction, () -> {
-                                    try {
-                                        simpleConsumer.ack(message);
-                                    } catch (ClientException e) {
-                                        throw new FinishedCallBack.FinishedCallBackException("ack failed", e);
-                                    }
-                                });
-                            } catch (FinishedCallBack.FinishedCallBackException e) {
-                                log.error(e.getMessage(), e);
-                            }
-                        }
+                        pullMessages();
                     } catch (Throwable t) {
-                        if (running.get()) {
-                            log.error("Error consuming, message:" + t.getMessage(), t);
-                        }
+                            if (running.get()) {
+                                log.error("Error consuming, message:" + t.getMessage(), t);
+                            }
                     }
                 }
             });
+        }
+    }
+
+    public void pullMessages() throws ClientException {
+        List<MessageView> messages = simpleConsumer.receive(maxMessageNum, Duration.ofSeconds(invisibleDurationSeconds));
+        if (messages.isEmpty()) {
+            return;
+        }
+        for (MessageView message : messages) {
+            String msgBodyString = StandardCharsets.UTF_8.decode(message.getBody()).toString();
+            try {
+                Transaction transaction = gson.fromJson(msgBodyString, Transaction.class);
+                detectProcessor.detect(transaction, () -> {
+                    try {
+                        simpleConsumer.ack(message);
+                    } catch (ClientException e) {
+                        throw new FinishedCallBack.FinishedCallBackException("ack failed", e);
+                    }
+                });
+            } catch (com.google.gson.JsonParseException e) {
+                log.error("illegal transaction message: {}", msgBodyString, e);
+                try {
+                    simpleConsumer.ack(message);
+                } catch (ClientException ackException) {
+                    log.error("Failed to ack message after parsing error", ackException);
+                }
+            }
+            catch (FinishedCallBack.FinishedCallBackException e) {
+                log.error(e.getMessage(), e);
+            }
         }
     }
 
@@ -93,9 +110,9 @@ public class TransactionMessageConsumer {
         if (simpleConsumer != null) {
             try {
                 simpleConsumer.close();
-                System.out.println("RocketMQ consumer closed.");
+                log.info("RocketMQ consumer closed.");
             } catch (Exception e) {
-                System.err.println("Error closing consumer: " + e.getMessage());
+                log.error("Error closing consumer", e);
             }
         }
     }
