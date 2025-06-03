@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: test
+  
+# RocketMQ configuration for tests
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: fraud-detection-test-group
+    
+# Logging configuration for tests
+logging:
+  level:
+    com.hsbc.detection: DEBUG
+    org.springframework: INFO 

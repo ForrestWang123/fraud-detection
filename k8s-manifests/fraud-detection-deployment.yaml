@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fraud-detection
+  labels:
+    app: fraud-detection
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fraud-detection
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 10
+  revisionHistoryLimit: 5
+  progressDeadlineSeconds: 600
+  template:
+    metadata:
+      labels:
+        app: fraud-detection
+      name: fraud-detection
+    spec:
+      containers:
+        - name: fraud-detection
+          image: crpi-d321rolw3i76v3hx.cn-guangzhou.personal.cr.aliyuncs.com/bank_test/fraud-detection:1.7
+          imagePullPolicy: Always
+          env:
+            - name: JAVA_OPTS
+              value: -Xms2g -Xmx2g -Xmn512m -XX:+UseG1GC -XX:+UseAdaptiveSizePolicy -XX:+PrintGCDetails
+          args: ["/bin/sh", "-c", "set -e && java -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -jar fraud-detection-1.0-SNAPSHOT.jar"]
+          ports:
+            - containerPort: 8031
+              name: web
+              protocol: TCP
+          resources:
+            limits:
+              cpu: '1'
+              memory: 4Gi
+            requests:
+              cpu: '1'
+              memory: 4Gi
+      imagePullSecrets:
+        - name: aliyun-registry-secret
+      terminationGracePeriodSeconds: 60

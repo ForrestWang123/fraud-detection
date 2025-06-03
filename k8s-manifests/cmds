@@ -1,0 +1,20 @@
+docker build --platform linux/amd64 -t fraud-detection:1.7 .
+docker tag fraud-detection:1.7 crpi-d321rolw3i76v3hx.cn-guangzhou.personal.cr.aliyuncs.com/bank_test/fraud-detection:1.7
+docker push crpi-d321rolw3i76v3hx.cn-guangzhou.personal.cr.aliyuncs.com/bank_test/fraud-detection:1.7
+
+docker login --username=hello_world888 crpi-d321rolw3i76v3hx.cn-guangzhou.personal.cr.aliyuncs.com
+
+docker images | grep fraud-detection
+docker run fraud-detection:1.0
+docker inspect crpi-d321rolw3i76v3hx.cn-guangzhou.personal.cr.aliyuncs.com/bank_test/hello-world-shell:1.0 | grep Architecture
+
+
+kubectl delete deploy fraud-detection
+kubectl apply -f fraud-detection-deployment.yaml
+kubectl get pod
+
+kubectl logs -f hello-world-shell-68fd674ff6-44nnv
+kubectl describe pod hello-world-shell-68fd674ff6-nch84
+
+kubectl create secret docker-registry aliyun-registry-secret   --docker-server=crpi-d321rolw3i76v3hx.cn-guangzhou.personal.cr.aliyuncs.com  --docker-username=hello_world888   --docker-password=java@master2
+
