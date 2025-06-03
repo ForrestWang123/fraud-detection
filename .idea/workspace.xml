@@ -5,118 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ca6032d-6352-4661-9c0c-35928a333a14" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/FraudDetectionApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/config/LogServiceConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/config/RocketMQConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/domain/DetectProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/domain/FinishedCallBack$FinishedCallBackException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/domain/FinishedCallBack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/domain/FraudWarning.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/domain/LogFraudNotifier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/domain/entity/Transaction$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/domain/entity/Transaction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/domain/rule/AbstractRule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/domain/rule/AmountCheckRule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/domain/rule/RuleFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/domain/rule/SuspiciousAccountsRule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/service/TransactionMessageConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/util/DetectionThreadFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/util/RunnableWithExceptionProtection$CallbackWhenException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/classes/com/hsbc/detection/util/RunnableWithExceptionProtection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/fraud-detection-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/fraud-detection-1.0-SNAPSHOT.jar.original" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/jacoco.exec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.config/LogServiceConfig.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.config/LogServiceConfig.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.config/RocketMQConfig.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.config/RocketMQConfig.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.config/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.config/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.entity/Transaction$Builder.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.entity/Transaction.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.entity/Transaction.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.entity/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.entity/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.rule/AbstractRule.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.rule/AbstractRule.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.rule/AmountCheckRule.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.rule/AmountCheckRule.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.rule/RuleFactory.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.rule/RuleFactory.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.rule/SuspiciousAccountsRule.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.rule/SuspiciousAccountsRule.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.rule/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain.rule/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain/DetectProcessor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain/DetectProcessor.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain/FinishedCallBack$FinishedCallBackException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain/FinishedCallBack.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain/FraudWarning.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain/FraudWarning.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain/LogFraudNotifier.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain/LogFraudNotifier.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.domain/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.service/TransactionMessageConsumer.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.service/TransactionMessageConsumer.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.service/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.service/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.util/DetectionThreadFactory.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.util/DetectionThreadFactory.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.util/RunnableWithExceptionProtection.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.util/RunnableWithExceptionProtection.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.util/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection.util/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection/FraudDetectionApplication.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection/FraudDetectionApplication.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/com.hsbc.detection/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/branchfc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/branchnc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/branchpc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/bundle.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/class.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/down.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/greenbar.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/group.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/method.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/package.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/prettify.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/redbar.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/report.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/report.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/session.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/sort.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/sort.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/source.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-resources/up.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco-sessions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/site/jacoco/jacoco.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/surefire-reports/TEST-com.hsbc.detection.TransactionMessageConsumerIntegrationTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/surefire-reports/TEST-com.hsbc.detection.domain.DetectProcessorTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/surefire-reports/TEST-com.hsbc.detection.domain.rule.AmountCheckRuleTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/surefire-reports/TEST-com.hsbc.detection.domain.rule.SuspiciousAccountsRuleTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/surefire-reports/TEST-com.hsbc.detection.service.TransactionMessageConsumerIntegrationTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/surefire-reports/com.hsbc.detection.TransactionMessageConsumerIntegrationTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/surefire-reports/com.hsbc.detection.domain.DetectProcessorTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/surefire-reports/com.hsbc.detection.domain.rule.AmountCheckRuleTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/surefire-reports/com.hsbc.detection.domain.rule.SuspiciousAccountsRuleTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/surefire-reports/com.hsbc.detection.service.TransactionMessageConsumerIntegrationTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/test-classes/application-test.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/test-classes/com/hsbc/detection/BaseIntegrationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/test-classes/com/hsbc/detection/TransactionMessageConsumerIntegrationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/test-classes/com/hsbc/detection/domain/DetectProcessorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/test-classes/com/hsbc/detection/domain/rule/AmountCheckRuleTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fraud-detection/target/test-classes/com/hsbc/detection/domain/rule/SuspiciousAccountsRuleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/System Architecture.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748909787167</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="init">
+      <option name="closed" value="true" />
+      <created>1748910058298</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748910058298</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
